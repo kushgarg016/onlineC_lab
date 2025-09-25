@@ -1,4 +1,4 @@
-/Write a program to display the sum of rows and sum of columns of a 3 × 3 matrix/
+//Write a program to display the sum of rows and sum of columns of a 3 × 3 matrix/
 
 #include <stdio.h>
     int main()
