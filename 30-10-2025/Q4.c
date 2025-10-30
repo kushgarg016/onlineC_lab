@@ -4,17 +4,17 @@
 
 int main()
 {
-    FILE *fp;              // file pointer
-    char filename[50];     // to store file name
+    FILE *fp;              
+    char filename[50];     
     char ch;
-    int charCount = 0;     // to count characters
-    int wordCount = 0;     // to count words
-    int inWord = 0;        // flag to track inside a word
+    int charCount = 0;     
+    int wordCount = 0;     
+    int inWord = 0;        
 
     printf("Enter the file name: ");
     scanf("%s", filename);
 
-    // open the file in read mode
+   
     fp = fopen(filename, "r");
 
     if (fp == NULL)
@@ -23,19 +23,19 @@ int main()
         return 0;
     }
 
-    // read file character by character
+   
     while ((ch = fgetc(fp)) != EOF)
     {
-        charCount++;  // count every character
+        charCount++;  
 
-        // check for words
+        
         if (ch == ' ' || ch == '\n' || ch == '\t')
         {
-            inWord = 0;  // space or newline ends a word
+            inWord = 0; 
         }
         else if (inWord == 0)
         {
-            inWord = 1;  // start of a new word
+            inWord = 1;  
             wordCount++;
         }
     }
@@ -43,6 +43,6 @@ int main()
     printf("\nTotal characters: %d\n", charCount);
     printf("Total words: %d\n", wordCount);
 
-    fclose(fp);  // close the file
+    fclose(fp);  
     return 0;
 }
