@@ -1,0 +1,27 @@
+//write to generate three random numbers form 1 to 9 and if all the 3 are same display message 1 prize if any 2 are same display message 2 price if all are different so display try again.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int a, b, c;
+
+    srand(time(NULL));
+
+    a = rand() % 9 + 1;
+    b = rand() % 9 + 1;
+    c = rand() % 9 + 1;
+
+    printf("Numbers: %d %d %d\n", a, b, c);
+
+    if (a == b && b == c) {
+        printf("1st Prize\n");
+    } else if (a == b || b == c || a == c) {
+        printf("2nd Prize\n");
+    } else {
+        printf("Try Again\n");
+    }
+
+    return 0;
+}
